@@ -1,13 +1,7 @@
-<?php
-
-    echo "Your name is:" . $_POST["name"].   "<br>";
-    echo "Email:" .  $_POST["email"]. "<br>";
-    echo "Password:". $_POST["pass"]. "<br>";
-    echo "Gender:". $_POST["gender"]. "<br>";
-    echo "Languages: ";
-    foreach ($_POST["lang"] as $lang) {
-        echo "$lang, ";
-    }
-    echo "<br>";
-
+<?php 
+echo "your name is:" . $_POST["name"] . "<br>";
+echo "your password is:" . $_POST["password"] . "<br>";
+echo "your email is:" . $_POST["email"] . "<br>";
+echo "Gender: " . $_POST["gender"] . "<br>";
+echo "Languages known:<br>" . implode("<br>", $_POST["languages"]);
 ?>
