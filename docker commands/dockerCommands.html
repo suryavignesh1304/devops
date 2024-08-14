@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .command-block {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow-x: auto;
+        }
+        .docker-command{
+            color: crimson;
+            font-size: large;
+        }
+        .command {
+            color: #66d9ef; /* Highlighted command color */
+            font-weight: bold;
+        }
+        .output {
+            color: #f8f8f2; /* Normal output color */
+            margin-left: 20px; /* Indent output for better separation */
+        }
+        .output a {
+            color: #a6e22e; /* Link color */
+        }
+    </style>
+</head>
+<body>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker login</span></span></code>
+        <div class="output">
+            Authenticating with existing credentials...<br>
+            Stored credentials invalid or expired<br>
+            Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to <a href="https://hub.docker.com/">https://hub.docker.com/</a> to create one.<br>
+            You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at <a href="https://docs.docker.com/go/access-tokens/">https://docs.docker.com/go/access-tokens/</a><br><br>
+            Username (srujan06): srujan06<br>
+            Password:<br><br>
+            Login Succeeded
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker pull ubuntu:latest</span></span></code>
+        <div class="output">
+            latest: Pulling from library/ubuntu<br>
+            Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30<br>
+            Status: Image is up to date for ubuntu:latest<br>
+            docker.io/library/ubuntu:latest<br><br>
+            What's Next?<br>
+            &nbsp;&nbsp;View a summary of image vulnerabilities and recommendations → docker scout quickview ubuntu:latest
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker run -it ubuntu</span></span></code>
+        <div class="output">
+            root@e7ead0274cb5:/# ls<br>
+            bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var<br>
+            root@e7ead0274cb5:/# ^C<br>
+            root@e7ead0274cb5:/# exit<br>
+            exit
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker images</span></span></code>
+        <div class="output">
+            REPOSITORY        TAG       IMAGE ID       CREATED        SIZE<br>
+            newestimage       latest    b27b3e64382d   12 hours ago   43.2MB<br>
+            newimagenithin2   latest    a1d4d2f9ea8b   24 hours ago   43.2MB<br>
+            newimagenithin    latest    59c58521797e   24 hours ago   43.2MB<br>
+            lochan            latest    a33d96680e37   4 days ago     148MB<br>
+            image1            latest    01307f0efddd   8 days ago     148MB<br>
+            cal               latest    989977b29d95   11 days ago    148MB<br>
+            ubuntu            latest    35a88802559d   7 weeks ago    78.1MB
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker ps</span></span></code>
+        <div class="output">
+            CONTAINER ID   IMAGE         COMMAND                  CREATED        STATUS        PORTS                  NAMES<br>
+            7316b8cd9c3f   newestimage   "/docker-entrypoint.…"   12 hours ago   Up 12 hours   0.0.0.0:8500->80/tcp   intelligent_jemison
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker ps -a</span></span></code>
+        <div class="command-block">
+            <table class="output-table">
+                <thead>
+                    <tr>
+                        <th>CONTAINER ID</th>
+                        <th>IMAGE</th>
+                        <th>COMMAND</th>
+                        <th>CREATED</th>
+                        <th>STATUS</th>
+                        <th>PORTS</th>
+                        <th>NAMES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>e7ead0274cb5</td>
+                        <td>ubuntu</td>
+                        <td>"/bin/bash"</td>
+                        <td>3 minutes ago</td>
+                        <td>Exited (130) About a minute ago</td>
+                        <td></td>
+                        <td>stupefied_blackburn</td>
+                    </tr>
+                    <tr>
+                        <td>7316b8cd9c3f</td>
+                        <td>newestimage</td>
+                        <td>"/docker-entrypoint.…"</td>
+                        <td>12 hours ago</td>
+                        <td>Up 12 hours</td>
+                        <td>0.0.0.0:8500->80/tcp</td>
+                        <td>intelligent_jemison</td>
+                    </tr>
+                    <tr>
+                        <td>87c93c515804</td>
+                        <td>newimagenithin2</td>
+                        <td>"/docker-entrypoint.…"</td>
+                        <td>24 hours ago</td>
+                        <td>Exited (255) 13 hours ago</td>
+                        <td>0.0.0.0:7200->80/tcp</td>
+                        <td>angry_visvesvaraya</td>
+                    </tr>
+                    <tr>
+                        <td>1aa09e7edfdd</td>
+                        <td>newimagenithin</td>
+                        <td>"/docker-entrypoint.…"</td>
+                        <td>24 hours ago</td>
+                        <td>Exited (255) 13 hours ago</td>
+                        <td>0.0.0.0:7000->80/tcp</td>
+                        <td>cool_mayer</td>
+                    </tr>
+                    <tr>
+                        <td>52c724aa0a9d</td>
+                        <td>lochan</td>
+                        <td>"httpd-foreground"</td>
+                        <td>4 days ago</td>
+                        <td>Exited (255) 25 hours ago</td>
+                        <td>0.0.0.0:8080->80/tcp</td>
+                        <td>vigorous_darwin</td>
+                    </tr>
+                    <tr>
+                        <td>3f5adeb1dc1a</td>
+                        <td>image1</td>
+                        <td>"httpd-foreground"</td>
+                        <td>8 days ago</td>
+                        <td>Exited (255) 4 days ago</td>
+                        <td>0.0.0.0:8800->80/tcp</td>
+                        <td>boring_jones</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker stop 7316b8cd9c3f</span></span></code>
+        <div class="output">7316b8cd9c3f</div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker ps</span></span></code>
+        <div class="output">
+            CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+        </div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker start 52c724aa0a9d</span></span></code>
+        <div class="output">52c724aa0a9d</div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker ps</span></span></code>
+        <div class="command-block">
+            <table class="output-table">
+                <thead>
+                    <tr>
+                        <th>CONTAINER ID</th>
+                        <th>IMAGE</th>
+                        <th>COMMAND</th>
+                        <th>CREATED</th>
+                        <th>STATUS</th>
+                        <th>PORTS</th>
+                        <th>NAMES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>52c724aa0a9d</td>
+                        <td>lochan</td>
+                        <td>"httpd-foreground"</td>
+                        <td>4 days ago</td>
+                        <td>Up 3 seconds</td>
+                        <td>0.0.0.0:8080->80/tcp</td>
+                        <td>vigorous_darwin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker rm 1aa09e7edfdd</span></span></code>
+        <div class="output">1aa09e7edfdd</div>
+    </div>
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0&gt;</span><span class="docker-command">docker ps -a</span></code>
+        <div class="output">
+            <table class="output-table">
+                <thead>
+                    <tr>
+                        <th>CONTAINER ID</th>
+                        <th>IMAGE</th>
+                        <th>COMMAND</th>
+                        <th>CREATED</th>
+                        <th>STATUS</th>
+                        <th>PORTS</th>
+                        <th>NAMES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>14ae128344f4</td>
+                        <td>ubuntu</td>
+                        <td>"/bin/bash"</td>
+                        <td>2 minutes ago</td>
+                        <td>Exited (0) 2 minutes ago</td>
+                        <td></td>
+                        <td>vigorous_cohen</td>
+                    </tr>
+                    <tr>
+                        <td>e7ead0274cb5</td>
+                        <td>ubuntu</td>
+                        <td>"/bin/bash"</td>
+                        <td>9 minutes ago</td>
+                        <td>Exited (130) 7 minutes ago</td>
+                        <td></td>
+                        <td>stupefied_blackburn</td>
+                    </tr>
+                    <tr>
+                        <td>7316b8cd9c3f</td>
+                        <td>newestimage</td>
+                        <td>"/docker-entrypoint.…"</td>
+                        <td>13 hours ago</td>
+                        <td>Exited (0) About a minute ago</td>
+                        <td></td>
+                        <td>intelligent_jemison</td>
+                    </tr>
+                    <tr>
+                        <td>87c93c515804</td>
+                        <td>newimagenithin2</td>
+                        <td>"/docker-entrypoint.…"</td>
+                        <td>25 hours ago</td>
+                        <td>Exited (255) 13 hours ago</td>
+                        <td>0.0.0.0:7200->80/tcp</td>
+                        <td>angry_visvesvaraya</td>
+                    </tr>
+                    <tr>
+                        <td>52c724aa0a9d</td>
+                        <td>lochan</td>
+                        <td>"httpd-foreground"</td>
+                        <td>4 days ago</td>
+                        <td>Up 41 seconds</td>
+                        <td>0.0.0.0:8080->80/tcp</td>
+                        <td>vigorous_darwin</td>
+                    </tr>
+                    <tr>
+                        <td>3f5adeb1dc1a</td>
+                        <td>image1</td>
+                        <td>"httpd-foreground"</td>
+                        <td>8 days ago</td>
+                        <td>Exited (255) 4 days ago</td>
+                        <td>0.0.0.0:8800->80/tcp</td>
+                        <td>boring_jones</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="command-block">
+        <code><span class="command">C:\Users\anub0><span class="docker-command">docker rmi newimagenithin</span></span></code>
+        <div class="output">Untagged: newimagenithin:latest<br>
+        Deleted: sha256:59c58521797e8ae64a14ffc766652ec894e4a8970619837d3b44598fa3040b8a</div>
+    </div>
+</body>
+</html>
